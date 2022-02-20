@@ -1,12 +1,16 @@
 <?php
 
 require_once 'src/Conta.php';
+require_once 'src/Titular.php';
 
-$primeiraConta = new Conta('123.456.789-00', 'Daniel Moraes');
-$segundaConta = new Conta('456.789.123-00', 'João da Silva');
+$primeiraConta = new Conta(new Titular('123.456.789-00', 'Daniel Moraes'));
+$segundaConta = new Conta(new Titular('456.789.123-00', 'João da Silva'));
 
-var_dump($primeiraConta);
-var_dump($segundaConta);
+echo "Titular: " . $primeiraConta->getNomeTitular() . PHP_EOL;
+echo "CPF: " . $primeiraConta->getCpfTitular() . PHP_EOL;
+echo "=====================================================================" . PHP_EOL;
+echo "Titular: " . $segundaConta->getNomeTitular() . PHP_EOL;
+echo "CPF: " . $segundaConta->getCpfTitular() . PHP_EOL;
 
 echo Conta::getNumeroDeContas() . PHP_EOL;
 
